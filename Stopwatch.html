@@ -63,7 +63,7 @@
     </div>
 
     <script>
-        // variables needed for project
+        // declaring variables needed for project
         var displayEl = document.getElementById("display");
         var startEl = document.getElementById("start-button");
         var stopEl = document.getElementById("stop-button");
@@ -79,7 +79,7 @@
         var text = "";
         var t;
 
-        // function to convert total seconds 'total' into formated time HH:MM:SS
+        // function to convert total seconds 'total' into formatted time HH:MM:SS
         var format = function(x) {
             hoursTens = Math.floor(x / 36000);
             hoursOnes = Math.floor((x % 36000) / 3600);
@@ -87,7 +87,6 @@
             minutesOnes = Math.floor(((x - hoursTens * 36000 - hoursOnes * 3600) % 600) / 60);
             secondsTens = Math.floor((x - hoursTens * 36000 - hoursOnes * 3600 - minutesTens * 600 - minutesOnes * 60) / 10);
             secondsOnes = x - hoursTens * 36000 - hoursOnes * 3600 - minutesTens * 600 - minutesOnes * 60 - secondsTens * 10;
-
             return hoursTens.toString() + hoursOnes.toString() + ":" + minutesTens.toString() + minutesOnes.toString() + ":" + secondsTens.toString() + secondsOnes.toString();
         };
 
@@ -121,12 +120,6 @@
         resetEl.onclick = function() {
             displayEl.textContent = "00:00:00";
             total = 0;
-            secondsOnes = 0;
-            secondsTens = 0;
-            minutesOnes = 0;
-            minutesTens = 0;
-            hoursOnes = 0;
-            hoursTens = 0;
         };
 
     </script>
